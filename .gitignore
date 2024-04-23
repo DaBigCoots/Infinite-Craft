@@ -1,2 +1,3 @@
 *.db
 *.code-workspace
+*.pyc
