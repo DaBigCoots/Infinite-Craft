@@ -2,10 +2,17 @@ import requests
 
 session = None
 
+session = None
+
 
 def send_request(item1, item2):
     payload = {"first": item1, "second": item2}
     url = "https://neal.fun/api/infinite-craft/pair"
+    global session
+    if session is None:
+        session = create_session()
+    session.headers.update({"Referer": "https://neal.fun/infinite-craft/"})
+    x = session.get(url, params=payload)
     global session
     if session is None:
         session = create_session()
