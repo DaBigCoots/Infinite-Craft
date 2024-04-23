@@ -1,3 +1,4 @@
+from types import NoneType
 import requests
 
 session = None
